@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XRP Airdrop – Limited Giveaway</title>
+    <meta name="description" content="Claim your free XRP tokens in the official community airdrop. Connect your wallet and receive your share.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="logo">✧ XRP <span class="logo-accent">Airdrop</span></div>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#how" class="nav-link">How It Works</a>
+                <a href="#claim" class="nav-link">Claim</a>
+                <a href="#why" class="nav-link">Why XRP</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="hero-badge">🎉 Limited Time Event</span>
+            <h1 class="hero-title">XRP Mega Airdrop<br><span class="hero-highlight">Giveaway</span></h1>
+            <p class="hero-sub">
+                Join thousands of crypto enthusiasts who have already claimed their free XRP.
+                Connect your wallet and receive your share — no strings attached.
+            </p>
+
+            <!-- Stats row -->
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" id="totalGiveaway">50,000</span>
+                    <span class="stat-label">XRP Pool</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="totalClaimed">2,847</span>
+                    <span class="stat-label">Claimed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="timeLeft">3</span>
+                    <span class="stat-label">Days Left</span>
+                </div>
+            </div>
+
+            <a href="#claim" class="btn btn-primary hero-btn">Connect Wallet to Claim ↓</a>
+        </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how" class="section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-sub">Three simple steps to claim your XRP</p>
+
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-icon">🔗</div>
+                    <h3 class="step-title">Connect Wallet</h3>
+                    <p class="step-desc">Connect your crypto wallet using the button below. We support all major wallets.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-icon">✅</div>
+                    <h3 class="step-title">Verify</h3>
+                    <p class="step-desc">Your wallet is automatically verified. No personal data needed.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-icon">🎁</div>
+                    <h3 class="step-title">Claim Airdrop</h3>
+                    <p class="step-desc">Receive your free XRP tokens instantly in your wallet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLAIM SECTION ===== -->
+    <section id="claim" class="section claim-section">
+        <div class="container">
+            <h2 class="section-title">Claim Your Airdrop</h2>
+            <p class="section-sub">Connect your wallet to check eligibility and claim your XRP.</p>
+
+            <div class="claim-box">
+                <!-- Wallet connect area -->
+                <div class="wallet-area">
+                    <button class="btn btn-primary btn-connect" id="connectBtn">
+                        🔌 Connect Wallet
+                    </button>
+                    <p class="wallet-info" id="walletInfo"></p>
+                </div>
+
+                <!-- Claim area (hidden until wallet is connected) -->
+                <div class="claim-area" id="claimArea">
+                    <div class="divider"></div>
+                    <p class="claim-amount">You are eligible for <strong>500 XRP</strong></p>
+                    <button class="btn btn-gold btn-claim" id="claimBtn">
+                        🚀 Claim Airdrop
+                    </button>
+                    <p class="status-msg" id="statusMsg"></p>
+                </div>
+
+                <!-- Demo notice -->
+                <p class="demo-notice">
+                    ⚠️ This is a demo simulation. No real wallet connection or transfer occurs.
+                    For educational and entertainment purposes only.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY XRP ===== -->
+    <section id="why" class="section why-section">
+        <div class="container">
+            <h2 class="section-title">Why XRP?</h2>
+            <p class="section-sub">The digital asset built for real-world payments</p>
+
+            <div class="features-grid" id="featuresGrid">
+                <!-- Cards are rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <p class="footer-logo">✧ XRP Airdrop</p>
+                <p class="footer-disc">
+                    This is a community giveaway event. Not affiliated with Ripple Labs.
+                    All claims are simulated for demonstration purposes.
+                </p>
+            </div>
+            <div class="footer-links" id="footerLinks">
+                <!-- rendered by JS -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 XRP Airdrop Community. Learn & earn.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    --bg-dark: #0b0f1a;
+    --bg-card: #121829;
+    --bg-card-hover: #1a2238;
+    --text-light: #f0f4ff;
+    --text-muted: #94a3b8;
+    --accent: #00b4d8;
+    --accent-hover: #0098b8;
+    --gold: #f6ad55;
+    --gold-hover: #e9943e;
+    --border: #1e293b;
+    --radius: 12px;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== HEADER ===== */
+.header {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    background: rgba(11, 15, 26, 0.85);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo-accent {
+    color: var(--accent);
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: color 0.25s;
+}
+
+.nav-link:hover {
+    color: var(--text-light);
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    background: linear-gradient(180deg, #0b0f1a 0%, #111827 50%, #0b0f1a 100%);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(0, 180, 216, 0.15);
+    color: var(--accent);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-highlight {
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-sub {
+    max-width: 600px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 16px 0 8px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.hero-btn {
+    margin-top: 8px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, opacity 0.3s;
+    text-align: center;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #1a1a2e;
+}
+
+.btn-gold:hover {
+    background: var(--gold-hover);
+}
+
+.btn-gold:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 70px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.section-sub {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+    font-size: 1rem;
+}
+
+/* ===== STEPS ===== */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.step-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px 24px;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.step-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+}
+
+.step-icon {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+}
+
+.step-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.step-desc {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+/* ===== CLAIM BOX ===== */
+.claim-section {
+    background: linear-gradient(180deg, #0b0f1a 0%, #111827 100%);
+}
+
+.claim-box {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.wallet-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.wallet-info {
+    color: var(--accent);
+    font-size: 0.85rem;
+    word-break: break-all;
+    background: rgba(0, 180, 216, 0.08);
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: none;
+    max-width: 100%;
+}
+
+.wallet-info.show {
+    display: block;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+}
+
+.claim-area {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.claim-area.show {
+    display: flex;
+}
+
+.claim-amount {
+    font-size: 1.15rem;
+}
+
+.claim-amount strong {
+    color: var(--gold);
+    font-size: 1.4rem;
+}
+
+.status-msg {
+    font-size: 0.95rem;
+    min-height: 28px;
+    color: var(--text-muted);
+}
+
+.status-msg.success {
+    color: #4ade80;
+    font-weight: 600;
+}
+
+.status-msg.error {
+    color: #f87171;
+}
+
+.demo-notice {
+    margin-top: 24px;
+    font-size: 0.78rem;
+    color: #64748b;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+}
+
+/* ===== FEATURES / WHY XRP ===== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    text-align: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.feature-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+}
+
+.feature-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.feature-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0 20px;
+    background: #070a12;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.footer-left {
+    max-width: 400px;
+}
+
+.footer-logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.footer-disc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.footer-links {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.footer-link-item {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    transition: color 0.25s;
+}
+
+.footer-link-item:hover {
+    color: var(--text-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: #475569;
+    font-size: 0.8rem;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet & small desktop */
+@media (max-width: 900px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 50px 0 40px;
+    }
+
+    .hero-title {
+        font-size: 1.7rem;
+    }
+
+    .hero-sub {
+        font-size: 0.95rem;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .stat-number {
+        font-size: 1.4rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .claim-box {
+        padding: 28px 18px;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        font-size: 0.92rem;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* Small phone */
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 1.4rem;
+    }
+
+    .hero-stats {
+        gap: 14px;
+    }
+
+    .stat-number {
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================================
+   SCRIPT.JS — Simple & beginner-friendly
+   All interactions are simulated for demo purposes.
+   ============================================================ */
+
+/* ===== DATA FOR "WHY XRP" CARDS ===== */
+// An array of objects — each object becomes one card.
+const featuresData = [
+    {
+        icon: "⚡",
+        title: "Lightning Fast",
+        desc: "XRP settles transactions in 3–5 seconds, making it one of the fastest digital assets available."
+    },
+    {
+        icon: "💰",
+        title: "Low Cost",
+        desc: "Transaction fees are fractions of a cent — perfect for micro-payments and everyday use."
+    },
+    {
+        icon: "🌍",
+        title: "Scalable",
+        desc: "The XRP Ledger handles over 1,500 transactions per second with ease."
+    }
+];
+
+/* ===== RENDER FEATURES ===== */
+// Grab the container where the cards will go
+const featuresContainer = document.getElementById("featuresGrid");
+
+// Build the HTML string by looping through the array
+let featuresHTML = "";
+for (let i = 0; i < featuresData.length; i++) {
+    const item = featuresData[i];
+    featuresHTML += `
+        <div class="feature-card">
+            <div class="feature-icon">${item.icon}</div>
+            <h3 class="feature-title">${item.title}</h3>
+            <p class="feature-desc">${item.desc}</p>
+        </div>
+    `;
+}
+// Insert the generated HTML into the container
+featuresContainer.innerHTML = featuresHTML;
+
+/* ===== FOOTER LINKS ===== */
+// Data for the footer link list
+const footerLinksData = [
+    { text: "How It Works", href: "#how" },
+    { text: "Claim", href: "#claim" },
+    { text: "Why XRP", href: "#why" },
+    { text: "Disclaimer", href: "#disclaimer" }
+];
+
+const footerLinksContainer = document.getElementById("footerLinks");
+let footerHTML = "";
+for (let i = 0; i < footerLinksData.length; i++) {
+    const link = footerLinksData[i];
+    footerHTML += `<a href="${link.href}" class="footer-link-item">${link.text}</a>`;
+}
+footerLinksContainer.innerHTML = footerHTML;
+
+/* ===== WALLET CONNECT & CLAIM LOGIC ===== */
+
+// --- State variables (track what's happening) ---
+let isWalletConnected = false;
+let hasClaimed = false;
+
+// --- Get DOM elements ---
+const connectBtn = document.getElementById("connectBtn");
+const walletInfo = document.getElementById("walletInfo");
+const claimArea = document.getElementById("claimArea");
+const claimBtn = document.getElementById("claimBtn");
+const statusMsg = document.getElementById("statusMsg");
+
+/* ---- Helper: generate a random wallet address ---- */
+function generateWalletAddress() {
+    const chars = "abcdef0123456789";
+    let address = "0x";
+    for (let i = 0; i < 40; i++) {
+        // Pick a random character from the list
+        const randomIndex = Math.floor(Math.random() * chars.length);
+        address += chars[randomIndex];
+    }
+    return address;
+}
+
+/* ---- Connect Wallet ---- */
+connectBtn.addEventListener("click", function () {
+    // If already connected, do nothing
+    if (isWalletConnected) return;
+
+    // --- Simulate connecting ---
+    const fakeAddress = generateWalletAddress();
+
+    // Update UI
+    connectBtn.textContent = "✅ Connected";
+    connectBtn.disabled = true; // can't click again
+
+    walletInfo.textContent = "Wallet: " + fakeAddress;
+    walletInfo.classList.add("show"); // makes it visible
+
+    // Show the claim area
+    claimArea.classList.add("show");
+
+    // Update state
+    isWalletConnected = true;
+
+    // Show a friendly message
+    statusMsg.textContent = "✅ Wallet connected! You can now claim your airdrop.";
+    statusMsg.className = "status-msg success";
+});
+
+/* ---- Claim Airdrop ---- */
+claimBtn.addEventListener("click", function () {
+    // Guard: wallet must be connected and not already claimed
+    if (!isWalletConnected) {
+        statusMsg.textContent = "⚠️ Please connect your wallet first.";
+        statusMsg.className = "status-msg error";
+        return;
+    }
+
+    if (hasClaimed) {
+        statusMsg.textContent = "🎉 You already claimed your XRP! Check your wallet.";
+        statusMsg.className = "status-msg success";
+        return;
+    }
+
+    // --- Simulate claiming ---
+    hasClaimed = true;
+
+    // Update button
+    claimBtn.textContent = "✅ Claimed!";
+    claimBtn.disabled = true;
+
+    // Success message
+    statusMsg.textContent = "🎉 Congratulations! You received 500 XRP! It's on its way.";
+    statusMsg.className = "status-msg success";
+});
+
+/* ============================
+   EVENT DELEGATION — handle all anchor clicks smoothly
+   ============================ */
+document.addEventListener("click", function (e) {
+    // Check if the clicked element (or a parent) is an anchor with href starting with #
+    const link = e.target.closest("a[href^='#']");
+    if (!link) return; // not a hash link, do nothing
+
+    // Prevent the browser from doing a hard jump
+    e.preventDefault();
+
+    // Get the target element id from the href (e.g. "#how" → "how")
+    const targetId = link.getAttribute("href").slice(1); // remove the "#"
+    if (!targetId) return;
+
+    const targetElement = document.getElementById(targetId);
+    if (!targetElement) return;
+
+    // Smoothly scroll to the element
+    targetElement.scrollIntoView({ behavior: "smooth" });
+});
+
+
+
+
+
+
+
+
+
+
+const productInput = document.getElementById("product"); 
+const productOptions = document.getElementById("productOptions"); 
+const options = productOptions.querySelectorAll("div");
+
+
+
+productInput.addEventListener("focus", () => { 
+    productOptions.style.display = "block"; }); 
+
+productInput.addEventListener("input", () => { 
+    const search = productInput.value.toLowerCase();
+
+    options.forEach(option => { 
+        option.style.display = 
+        option.textContent.toLowerCase().includes(search) 
+        ? "block" 
+        : "none"; 
+    });
+
+    productOptions.style.display = "block"; 
+}); 
+
+options.forEach(option => { 
+    option.addEventListener("click", () => { 
+        productInput.value = option.textContent; 
+        productOptions.style.display = "none"; 
+    }); 
+});
+
+document.addEventListener("click", (event) => { 
+    if (!event.target.closest(".product-dropdown")) { 
+        productOptions.style.display = "none"; 
+    } 
+});
+
+
+
+
+
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Selector</title>
+
+<style>
+
+/* =========================
+   MAIN DROPDOWN
+========================= */
+
+.product-dropdown {
+    position: relative;
+    width: 350px;
+}
+
+
+/* =========================
+   INPUT AREA
+========================= */
+
+.product-input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    height: 60px;
+
+    padding: 6px 10px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+
+/* SELECTED PRODUCT IMAGE */
+
+#selectedImage {
+    display: none;
+
+    width: 48px;
+    height: 48px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    flex-shrink: 0;
+}
+
+
+/* INPUT */
+
+#product {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   DROPDOWN LIST
+========================= */
+
+.product-options {
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 5px);
+    left: 0;
+
+    width: 100%;
+
+    background: #222;
+
+    color: white;
+
+    border: 1px solid #555;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    z-index: 9999;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* =========================
+   EACH PRODUCT
+========================= */
+
+.product-option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    transition: background 0.2s;
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-option img {
+    width: 55px;
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    flex-shrink: 0;
+}
+
+
+/* PRODUCT NAME */
+
+.product-option span {
+    font-size: 16px;
+}
+
+
+/* HOVER */
+
+.product-option:hover {
+    background: #ff9800;
+
+    color: #000;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<label for="product">Choose a product:</label>
+
+
+<div class="product-dropdown">
+
+
+    <!-- =========================
+         INPUT AREA
+    ========================== -->
+
+    <div class="product-input-box">
+
+        <img
+            id="selectedImage"
+            src=""
+            alt="Selected product"
+        >
+
+        <input
+            type="text"
+            id="product"
+            name="product"
+            placeholder="Start typing..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <!-- =========================
+         PRODUCT OPTIONS
+    ========================== -->
+
+    <div id="productOptions" class="product-options">
+
+
+        <!-- CHAIR -->
+
+        <div
+            class="product-option"
+            data-name="Chair"
+            data-image="images/chair.jpg"
+        >
+
+            <img
+                src="images/chair.jpg"
+                alt="Chair"
+            >
+
+            <span>Chair</span>
+
+        </div>
+
+
+        <!-- BED -->
+
+        <div
+            class="product-option"
+            data-name="Bed"
+            data-image="images/bed.jpg"
+        >
+
+            <img
+                src="images/bed.jpg"
+                alt="Bed"
+            >
+
+            <span>Bed</span>
+
+        </div>
+
+
+        <!-- WARDROBE -->
+
+        <div
+            class="product-option"
+            data-name="Wardrobe"
+            data-image="images/wardrobe.jpg"
+        >
+
+            <img
+                src="images/wardrobe.jpg"
+                alt="Wardrobe"
+            >
+
+            <span>Wardrobe</span>
+
+        </div>
+
+
+        <!-- DINING TABLE -->
+
+        <div
+            class="product-option"
+            data-name="Dining Table"
+            data-image="images/dining-table.jpg"
+        >
+
+            <img
+                src="images/dining-table.jpg"
+                alt="Dining Table"
+            >
+
+            <span>Dining Table</span>
+
+        </div>
+
+
+        <!-- SOFA -->
+
+        <div
+            class="product-option"
+            data-name="Sofa"
+            data-image="images/sofa.jpg"
+        >
+
+            <img
+                src="images/sofa.jpg"
+                alt="Sofa"
+            >
+
+            <span>Sofa</span>
+
+        </div>
+
+
+        <!-- OFFICE TABLE -->
+
+        <div
+            class="product-option"
+            data-name="Office Table"
+            data-image="images/office-table.jpg"
+        >
+
+            <img
+                src="images/office-table.jpg"
+                alt="Office Table"
+            >
+
+            <span>Office Table</span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   GET ELEMENTS
+========================= */
+
+const productInput =
+    document.getElementById("product");
+
+const productOptions =
+    document.getElementById("productOptions");
+
+const selectedImage =
+    document.getElementById("selectedImage");
+
+const options =
+    document.querySelectorAll(".product-option");
+
+
+/* =========================
+   OPEN DROPDOWN
+========================= */
+
+productInput.addEventListener("focus", () => {
+
+    productOptions.style.display = "block";
+
+});
+
+
+/* =========================
+   SEARCH PRODUCTS
+========================= */
+
+productInput.addEventListener("input", () => {
+
+    const search =
+        productInput.value.toLowerCase().trim();
+
+
+    let found = false;
+
+
+    options.forEach(option => {
+
+        const name =
+            option.dataset.name.toLowerCase();
+
+
+        if (name.includes(search)) {
+
+            option.style.display = "flex";
+
+            found = true;
+
+        } else {
+
+            option.style.display = "none";
+
+        }
+
+    });
+
+
+    productOptions.style.display =
+        found ? "block" : "none";
+
+});
+
+
+/* =========================
+   SELECT PRODUCT
+========================= */
+
+options.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+
+        /* Get product name */
+
+        const name =
+            option.dataset.name;
+
+
+        /* Get product image */
+
+        const image =
+            option.dataset.image;
+
+
+        /* Put product name into input */
+
+        productInput.value = name;
+
+
+        /* Put selected image into input */
+
+        selectedImage.src = image;
+
+
+        /* Show selected image */
+
+        selectedImage.style.display = "block";
+
+
+        /* Close dropdown */
+
+        productOptions.style.display = "none";
+
+
+    });
+
+});
+
+
+/* =========================
+   CLOSE WHEN CLICKING OUTSIDE
+========================= */
+
+document.addEventListener("click", event => {
+
+    if (!event.target.closest(".product-dropdown")) {
+
+        productOptions.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
+
+
+
+
+<!-- 
+const productInput = document.getElementById("product"); 
+const productOptions = document.getElementById("productOptions"); 
+const options = productOptions.querySelectorAll("div");
+
+
+
+productInput.addEventListener("focus", () => { 
+    productOptions.style.display = "block"; }); 
+
+productInput.addEventListener("input", () => { 
+    const search = productInput.value.toLowerCase();
+
+    options.forEach(option => { 
+        option.style.display = 
+        option.textContent.toLowerCase().includes(search) 
+        ? "block" 
+        : "none"; 
+    });
+
+    productOptions.style.display = "block"; 
+}); 
+
+options.forEach(option => { 
+    option.addEventListener("click", () => { 
+        productInput.value = option.textContent; 
+        productOptions.style.display = "none"; 
+    }); 
+});
+
+document.addEventListener("click", (event) => { 
+    if (!event.target.closest(".product-dropdown")) { 
+        productOptions.style.display = "none"; 
+    } 
+});
+-->

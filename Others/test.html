@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#products{
+  background-color: black;
+  color: white;
+}
+</style>
+<body>
+    <label for="product">Choose a product:</label>
+
+<input list="products" id="product" name="product" placeholder="Start typing...">
+
+<datalist id="products">
+  <option value="Chair">
+  <option value="Bed">
+  <option value="Wardrobe">
+  <option value="Dining Table">
+  <option value="Sofa">
+  <option value="Office Table">
+</datalist>
+</body>
+</html>
+
+
+
+<script>
+  
+const form = document.getElementById("myForm");
+// const successMessage = document.getElementById("successMessage");
+const submitBtn = document.getElementById("submitAddressBtn");
+
+form.addEventListener("submit", async function (event) {
+    // Stop Netlify's normal redirect
+    event.preventDefault();
+
+    // Prevent double-click submissions
+    submitAddressBtn.disabled = true;
+    // submitAddressBtn.textContent = "Submitting...";
+
+        try {
+
+        const formData = new FormData(form);
+
+        // Send the form to Netlify
+        const response = await fetch("/", {
+            method: "POST",
+            body: formData
+        });
+  if (!response.ok) {
+            throw new Error("Form submission failed");
+        }
+
+        // Form successfully received by Netlify
+        // successMessage.style.display = "block";
+
+        // Reset the form
+        form.reset();
+
+        // Restore button
+        submitBtn.disabled = false;
+        // submitBtn.textContent = "Submit";
+
+    } catch (error) {
+
+        console.error("Netlify form error:", error);
+
+        alert("Sorry, your form could not be submitted. Please try again.");
+
+        submitBtn.disabled = false;
+        // submitBtn.textContent = "Submit";
+    }
+
+});
+</script>
+
+
+
+
+<body>
+
+    <form 
+  name="my-form" 
+  method="POST" 
+  data-netlify="true"
+  id="myForm"
+  >
+  <input 
+  type="text" 
+  id="myForm" 
+  value="my-form" 
+  placeholder="type here...">
+
+  <button type="submit"
+  style="height: 50px;
+  width: 50px;">submit</button>
+
+    </form>
+</body>
