@@ -64,25 +64,24 @@ body {
   font-weight: 700;
   font-size: 1.2rem;
 }
-/* . {
+ .logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px; height: 34px;
+  width: 35px; height: 35px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
   font-weight: 700;
   font-size: 1.1rem;
-} */
-.brand-name { letter-spacing: 0.5px; }
-.logo{
+} 
+.brand-name { letter-spacing: 0.9px; margin-left: 4px;}
+/* .logo{
   width: 34px;
   height: 34px;
   border-radius: var(--radius-sm);
   position: absolute;
   left: 190px;
-} 
+}  */
 
 .nav-wallet-btn {
   padding: 8px 18px;
