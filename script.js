@@ -369,7 +369,7 @@ form.addEventListener("submit", async function (event) {
             // hide after a short delay
            setTimeout(() => {
              successMessage.style.display = "none";
-           }, 4000);
+           }, 1000);
          }
 
          // Reset the form
