@@ -383,8 +383,6 @@ form.addEventListener("submit", async function (event) {
 
          console.error("Netlify form error:", error);
 
-         alert("Sorry, your form could not be submitted. Please try again.");
-
          submitBtn.disabled = false;
          // submitBtn.textContent = "Submit";
      }
