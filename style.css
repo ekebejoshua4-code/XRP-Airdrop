@@ -74,6 +74,24 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
 } 
+.ripple-logo{
+              animation: riplle 2s infinite alternate ease-in-out;
+             animation-direction: alternate;
+             animation-timing-function: 0.5ms ;
+             animation-delay: 0s;
+             animation-iteration-count: infinite;
+             position: relative;
+             box-shadow: 0px 0px 3px 3px #00a3e43a;
+            
+}
+ @keyframes riplle {
+              from{
+                top: 10px;
+              }
+              to{
+                top: 0px; 
+              }
+            }
 .brand-name { letter-spacing: 0.9px; margin-left: 4px;}
 /* .logo{
   width: 34px;
@@ -119,6 +137,13 @@ body {
   z-index: 1;
   max-width: 640px;
   margin: 0 auto;
+  animation: hero-content-in 2s ease-in-out;
+  animation-iteration-count: 1;
+  animation-name: hero-content-in;
+}
+@keyframes hero-content-in {
+  from{opacity: 0%; top: 50px;}
+  to{opacity: 100%; top: 0px;}
 }
 .badge {
   display: inline-block;
@@ -130,6 +155,14 @@ body {
   font-size: 0.8rem;
   font-weight: 500;
   margin-bottom: 24px;
+  animation: 2s ease-in-out;
+  animation-iteration-count: 1;
+  animation-name: badge-in;
+  position: relative;
+}
+@keyframes badge-in {
+  from{opacity: 0%; top: -10px;}
+  to{opacity: 100%; top: 0px;}
 }
 .hero h1 {
   font-size: 2.8rem;
@@ -205,48 +238,50 @@ input{
 input::hover{
   cursor: pointer;
 }
-.product-dropdown { 
-    position: relative; 
+.product-dropdown {
+    position: relative;
     background: black;
     outline: none;
-    width: 50%;
-    max-width: 100%;
+
+    width: 300px;
+    min-width: 300px;
+    max-width: none;
+
     box-sizing: border-box;
-    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#product {  
-    padding: 12px; 
-    box-sizing: border-box; 
-    border: 1px solid #0085c7; 
-    border-radius: 6px; 
-    opacity: 100%;
-    width: 100%;
-    max-width: 500px;
+#product {
+    padding: 12px;
     box-sizing: border-box;
-    margin: 0 auto;
-    display: block;
+    border: 1px solid #0085c7;
+    border-radius: 6px;
+    opacity: 100%;
+
+    width: 300px; /* stays the same size */
+
     position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: block;
+}
+.product-options {
+    display: none;
+    position: absolute;
+    top: 100%;
     left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-} 
-.product-options { 
-    display: none; 
-    position: absolute; 
-    top: 100%; 
-    left: 0; 
-    width: 100%; 
+    width: 300px;
     background: #131a2a;
-    /* DROPDOWN BACKGROUND */ 
-    color: white; /* TEXT COLOR */ 
-    border: 1px solid  #314266;; 
-    border-radius: 6px; 
-    overflow: hidden; 
-    z-index: 9999; 
+    color: white;
+    border: 1px solid #314266;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 9999;
     opacity: 100;
-} 
+    box-sizing: border-box;
+}
 .product-options div { 
     padding: 12px; 
     cursor: pointer; 
@@ -611,6 +646,7 @@ input::hover{
   .step-line { width: 30px; margin: 0 4px; }
   .dot-label { font-size: 0.68rem; }
   .product-options{height: 570%; overflow-x: hidden; overflow-y: scroll;}
+  .ripple-logo{bottom: 50px;}
 }
 
 @media (max-width: 480px) {
